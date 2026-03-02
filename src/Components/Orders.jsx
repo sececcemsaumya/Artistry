@@ -83,29 +83,39 @@ const Orders = () => {
         </div>
       </nav>
 
-      <div className="orders-page">
-        <h2 className="page-title">Order History</h2>
-        <div className="orders-grid">
-          {orders.length === 0 ? (
-            <p>No orders found</p>
-          ) : (
-            orders.map(order => (
-              <div key={order._id} className="order-card">
+  <div className="orders-page">
+  <h2 className="page-title">Order History</h2>
+  <div className="orders-grid">
+    {orders.length === 0 ? (
+      <p>No orders found</p>
+    ) : (
+      orders.map(order => (
+        <div key={order._id} className="order-card">
+          <div className="order-items-list">
+            {order.items.map((item, idx) => (
+              <div key={item.id || idx} className="order-item">
+                {/* IMAGE ON THE LEFT */}
                 <div className="order-img-container">
-                  <img src={order.items[0]?.img} alt={order.items[0]?.title} />
+                  <img src={item.img} alt={item.title} />
                 </div>
+                {/* TEXT ON THE RIGHT */}
                 <div className="order-info">
-                  <h3>{order.items[0]?.title}</h3>
-                  <div className="order-artist">{order.items[0]?.artist}</div>
-                  <div className="order-price">₹{order.items[0]?.price}</div>
-                  <div className="order-status">Status: {order.status}</div>
-                  <div className="order-total">Total: ₹{order.total}</div>
+                  <h3>{item.title}</h3>
+                  <div className="order-artist">{item.artist}</div>
+                  <div className="order-price">₹{item.price}</div>
                 </div>
               </div>
-            ))
-          )}
+            ))}
+          </div>
+          {/* You can add order status and total here if you want */}
         </div>
-      </div>
+      ))
+    )}
+  </div>
+</div>
+
+
+
     </div>
   );
 };

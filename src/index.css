@@ -2586,3 +2586,62 @@ body, html {
     transform: scale(1);
   }
 }
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* This creates space between each .order-item */
+}
+
+.order-item {
+  display: flex;
+  flex-direction: row; /* image left, text right */
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee; /* Optional: separator */
+  padding-bottom: 16px;           /* Optional: space before border */
+}
+
+.order-item:last-child {
+  border-bottom: none; /* Remove border from last item */
+  padding-bottom: 0;   /* Remove padding from last item */
+}
+
+.order-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.order-img-container img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.order-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.order-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.order-artist {
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.order-price {
+  color: #009688;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
