@@ -12,7 +12,7 @@ app.use(cors());
 //  mongodb+srv://saumya:saumya2005@cluster0.ii2ki.mongodb.net/ArtGallery
 //   mongodb://localhost:27017/ArtGallery
 
-mongoose.connect("mongodb+srv://saumya:saumya2005@cluster0.ii2ki.mongodb.net/ArtGallery")
+mongoose.connect("mongodb+srv://saumya262005_db_user:saumya2005@artgallery.spqv0mt.mongodb.net/artGalleryDB")
   .then(() => console.log("Connected to the database"))
   .catch((err) => console.log("Database connection error:", err));
 
