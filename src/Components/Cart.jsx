@@ -31,7 +31,7 @@ const Cart = () => {
     const loadCart = async () => {
       try {
         if (token) {
-          const response = await axios.get('http://localhost:3000/api/cart', {
+          const response = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/cart', {
             headers: { Authorization: `Bearer ${token}` }
           });
           const cartData = Array.isArray(response.data?.cart) ? response.data.cart : [];
@@ -81,7 +81,7 @@ const Cart = () => {
     const token = localStorage.getItem('token');
     try {
       if (token) {
-        await axios.delete(`http://localhost:3000/api/cart/${artId}`, {
+        await axios.delete(`https://art-gallery-backend-2-oemw.onrender.com/api/cart/${artId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
@@ -98,7 +98,7 @@ const Cart = () => {
   const token = localStorage.getItem('token');
   try {
     if (token) {
-      await axios.post('http://localhost:3000/api/orders', 
+      await axios.post('https://art-gallery-backend-2-oemw.onrender.com/api/orders', 
         { 
           items: cart,
           total: total 

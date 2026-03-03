@@ -1302,7 +1302,7 @@ const ArtworksPage = () => {
   const loadWishlist = async () => {
     if (token) {
       try {
-        const response = await axios.get('http://localhost:3000/api/wishlist', {
+        const response = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/wishlist', {
           headers: { Authorization: `Bearer ${token}` }
         });
         // Always expect { wishlist: [...] }
@@ -1323,7 +1323,7 @@ const ArtworksPage = () => {
   const loadCart = async () => {
     if (token) {
       try {
-        const response = await axios.get('http://localhost:3000/api/cart', {
+        const response = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/cart', {
           headers: { Authorization: `Bearer ${token}` }
         });
         // Always expect { cart: [...] }
@@ -1355,7 +1355,7 @@ const ArtworksPage = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/wishlist', 
+        'https://art-gallery-backend-2-oemw.onrender.com/api/wishlist', 
         { artwork: art },
         {
           headers: { 
@@ -1400,12 +1400,12 @@ const ArtworksPage = () => {
     }
   } else {
     try {
-      const response = await axios.post('http://localhost:3000/api/cart',
+      const response = await axios.post('https://art-gallery-backend-2-oemw.onrender.com/api/cart',
         { artwork },
         { headers: { Authorization: `Bearer ${token}` } }
       );
       // After successful add, reload cart from backend
-      const cartRes = await axios.get('http://localhost:3000/api/cart', {
+      const cartRes = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/cart', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const cartData = Array.isArray(cartRes.data.cart) ? cartRes.data.cart : [];

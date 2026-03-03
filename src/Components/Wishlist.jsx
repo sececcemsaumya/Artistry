@@ -48,7 +48,7 @@ const Wishlist = () => {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://localhost:3000/api/wishlist', {
+          const response = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/wishlist', {
             headers: { 
               Authorization: `Bearer ${token}`
             }
@@ -107,7 +107,7 @@ const Wishlist = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:3000/api/wishlist/${artId}`, {
+      await axios.delete(`https://art-gallery-backend-2-oemw.onrender.com/api/wishlist/${artId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -124,7 +124,7 @@ const Wishlist = () => {
     const token = localStorage.getItem('token');
     try {
       if (token) {
-        await axios.post('http://localhost:3000/api/cart', 
+        await axios.post('https://art-gallery-backend-2-oemw.onrender.com/api/cart', 
           { artwork },
           { headers: { Authorization: `Bearer ${token}` } }
         );

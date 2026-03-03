@@ -17,19 +17,19 @@ const Orders = () => {
         if (!token) return navigate('/login');
 
         // Fetch orders
-        const ordersResponse = await axios.get('http://localhost:3000/api/orders', {
+        const ordersResponse = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/orders', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setOrders(ordersResponse.data);
 
         // Fetch wishlist count
-        const wishlistResponse = await axios.get('http://localhost:3000/api/wishlist', {
+        const wishlistResponse = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/wishlist', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setWishlistCount(wishlistResponse.data.wishlist?.length || 0);
 
         // Fetch cart count
-        const cartResponse = await axios.get('http://localhost:3000/api/cart', {
+        const cartResponse = await axios.get('https://art-gallery-backend-2-oemw.onrender.com/api/cart', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setCartCount(cartResponse.data.cart?.length || 0);
